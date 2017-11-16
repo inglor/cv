@@ -1,0 +1,205 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% "ModernCV" CV and Cover Letter
+% LaTeX Template
+% Version 1.3 (29/10/16)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Xavier Danaux (xdanaux@gmail.com) with modifications by:
+% Vel (vel@latextemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Important note:
+% This template requires the moderncv.cls and .sty files to be in the same 
+% directory as this .tex file. These files provide the resume style and themes 
+% used for structuring the document.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[10pt,a4paper,sans]{moderncv} % Font sizes: 10, 11, or 12; paper sizes: a4paper, letterpaper, a5paper, legalpaper, executivepaper or landscape; font families: sans or roman
+\moderncvstyle{banking} % CV theme - options include: 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{black} % CV color - options include: 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+\usepackage[scale=0.85]{geometry} % Reduce document margins
+%\setlength{\hintscolumnwidth}{3cm} % Uncomment to change the width of the dates column
+%\setlength{\makecvtitlenamewidth}{10cm} % For the 'classic' style, uncomment to adjust the width of the space allocated to your name
+
+%----------------------------------------------------------------------------------------
+%	NAME AND CONTACT INFORMATION SECTION
+%----------------------------------------------------------------------------------------
+
+\firstname{Leonidas} % Your first name
+\familyname{Spyropoulos} % Your last name
+
+% All information in this block is optional, comment out any lines you don't need
+%\title{}
+%\address{123 Broadway}{City, State 12345}
+\mobile{+44(0)7732702059}
+%\phone{(000) 111 1112}
+%\fax{(000) 111 1113}
+\email{leonidas@spyropoulos.eu}
+%\homepage{staff.org.edu/~jsmith}{staff.org.edu/$\sim$jsmith} % The first argument is the url for the clickable link, the second argument is the url displayed in the template - this allows special characters to be displayed such as the tilde in this example
+%\extrainfo{additional information}
+%\photo[70pt][0.4pt]{pictures/picture} % The first bracket is the picture height, the second is the thickness of the frame around the picture (0pt for no frame)
+%\quote{"A witty and playful quotation" - John Smith}
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+%----------------------------------------------------------------------------------------
+%	CURRICULUM VITAE
+%----------------------------------------------------------------------------------------
+
+\makecvtitle % Print the CV title
+
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Experience}
+\subsection{Relevant work}
+
+\cventry{Apr 2016--Present}{System Developer Associate Manager}{\textsc{Accenture}}{London, UK}{Administrator}{Joined Accenture Capital Markets Trading Platforms with the acquisition of Formicary Ltd. Continuing my roles as a Murex, Enterprise Java SME and server Administrator. Implemented Murex SaaS on the Accenture private cloud.
+\begin{itemize}
+	\item Murex install, Ansible, git, 
+	\item Artifactory, NGINX, Reverse Proxy, SSL certificate
+	\item Accenture Private Cloud
+\end{itemize}
+}
+
+\cventry{Nov 2016--Present}{Murex Migration Technical Lead}{\textsc{Rabobank}}{London, UK}{Consulting}{Responsible for the technical implementation for the migration of existing systems into Murex 3.1. The scope involves Interest Rate Derivatives, Fixed Income and FX/MM products. I lead a team of 6 developers across different time zones with responsibilities on delivering a migration tooling framework and configurations for Murex 3.1 in order to migrate trades and static data (counter parties, settlement instructions, accounts etc.).
+\begin{itemize}
+ 	\item Java 8, Camel, Spring Boot, Hibernate, JUnit, Multi-thread
+ 	\item AngularJS (1.5), UIGrid, CSS, HTML 5
+ 	\item Oracle, Derby, flyway
+ 	\item RESTful web services, MVC
+ 	\item Maven, TFS, git
+ 	\item CI Jenkins
+ 	\item Murex
+ 	\begin{itemize}
+ 		\item MxML Exchange
+ 		\item Datamart
+ 		\item Performance optimizations
+ 		\item SME support
+	\end{itemize}
+ 	\item Reformx specialist
+\end{itemize}
+}
+
+\cventry{Mar 2016--Nov 2016}{Murex Migration Senior Developer - Static Data}{\textsc{UBS}}{London, UK}{Consulting}{As a member of one of the largest migration and re-platforming project in the world I was responsible for implementing SIMM regulatory changes on static data interfaces along with performance optimization. I also aid on the Physical Acceptance performance analysis for Murex application stack suggested improvements on performance bottlenecks which would be arising from the incoming regional release.
+}
+
+%------------------------------------------------
+
+\cventry{Nov 2010--Apr 2016}{Senior Systems Engineer}{\textsc{Formicary}}{London, UK}{Administrator}{Part of the software development team which implemented various projects involving multiple software technologies and finally led to the creation of Refomrx and Calmon products. Member of the admin team for administrating multiple servers for the DevOps tools of software development and Databases.
+\begin{itemize}
+	\item Frameworks: Spring Boot, Java 8, JPA, JDBC, JUnit, Spring Security, JGit, Camel, XSL
+	\item Front End: AngularJS (1.5), UIGrid, CSS, HTML5
+	\item Databases: Oracle, Derby, Postgres, MySQL, MongoDB
+	\item Messaging: RESTful web services, ActiveMQ, JMS
+	\item Platform: Microservices
+	\item VCS: svn, git, clearcase
+	\item Other: Calypso, Murex, Nvidia CUDA, Maven, Ant
+	\item DevOps: Continuous Integration (Teamcity), Continuous Deployment (Ansible) servers setup
+	\item Administration: Linux/Unix administrator
+\end{itemize}
+}
+
+\cventry{Jan 2016--Feb 2016}{Lead Developer}{\textsc{Soci\'et\'e G\'en\'erale}}{London, UK}{Consulting}{Lead developer for a Murex external Feed to InterContinental Exchange (ICE) to support initial margin calculations as part of the client's ongoing Murex OTC clearing implementation.
+\begin{itemize}
+	\item Design architecture of ICE-IM adaptor service and components
+	\item Development according to coding standards and AGILE workflow
+	\item Management of project's release cycles and testing approach
+\end{itemize}
+}
+
+\newpage
+
+\cventry{Mar 2014--Jan 2016}{Quant risk analyst and Java engineer}{\textsc{LCH Clearnet}}{London, UK}{Consulting}{Responsible for the implementation of the Risk Calculation engine for Listed Derivatives.
+\begin{itemize}
+	\item Products
+		\begin{itemize}
+		\item Deliverable Swap Futures, Options on Future Bonds, Options on Future STIR, short-term interest rate (STIRs) and long-term interest rate (LTIRs) Euro and Sterling-based listed derivatives, Options on Future Equities, Future Equities
+	\end{itemize}
+	\item Technologies
+	\begin{itemize}
+		\item OpenGamma engine, Java 8, Weblogic, XSLT, Apache Camel, Sping Boot, Hibernate, Maven, Oracle, Multi-thread
+	\end{itemize}
+	\item Historical Value at Risk pricing (VaR)
+\end{itemize}
+}
+
+\cventry{Mar 2013--Jan 2014}{Murex and Java developer}{\textsc{LCH Clearnet}}{London, UK}{Consulting}{Member of the LCH Clearnet project for implementing Inflation Swaps and Swaptions.
+\begin{itemize}
+	\item Murex MxML Exchange
+	\item Murex Pre-Trade Rules (MSL)
+	\item SwapClear Services, ClearLink
+	\item SMART tool
+\end{itemize}
+}
+
+\cventry{Mar 2012--Feb 2012}{Murex and Java developer}{\textsc{Standard Bank Group}}{London, UK}{Consulting}{Developing a Murex to MarkitWire Feed (STP) for Swaps and derivatives along with a Reconciliation framework.
+\begin{itemize}
+	\item MarkitWire DealSink API, MarkitWire Deal, Extractor API
+	\item XSLT, Spring, Spring Integration, Murex, Maven
+\end{itemize}
+}
+
+\cventry{Feb 2011--Aug 2011}{Developer}{\textsc{Royal Bank of Scotland}}{London, UK}{Consulting}{Various  back-end and front-end developer in the internals training team.
+\begin{itemize}
+	\item Java EE technology, 
+	\item JSP, ASP, ExtJS, JQuery
+	\item CQ 5.0
+\end{itemize}
+}
+
+\subsection{Other}
+\cventry{Mar 2009--Sep 2009}{Technical Support Agent}{\textsc{Hellas On Line}}{Athens, Greece}{}{}
+
+\cventry{Dev 2004--Dec 2005}{Freelance software developer}{\textsc{Freelance Web Designer / Developer}}{Athens, Greece}{}{}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Education}
+
+\cventry{2007--2008}{MSc of Distributed and Multimedia Information Systems}{Heriot-Watt University}{Edinburgh, UK}{\textit{}}{Thesis: Multicore and Distributed-memory implementations of Haskell - Performance Comparison.
+\newline
+Modules: Distributed System Programming (Sockets, RMI, RPC, SSL), Multi-thread programming (threads), Software Engineering in Java, Information Systems Methodologies, Promela verification modelling language, Multimedia Design, Network Applications.
+}
+
+\cventry{2000--2007}{Bachelor of Computer Sciences}{Technologiko Ekpaideutiko Idrima}{Athens, Greece}{\textit{}}{Thesis: Parallel Algorithms for Matrix Multiplication and Document Clustering - Implementation and Testing on a PC-Cluster environment using MPI (MPICH).
+\newline
+Modules: Computer Programming I/II/III (C,C++,Pascal),Data structures, Computer Systems Architecture (ASM x86), Databases I/II (Oracle, MySQL, MSSQL), Artificial Intelligence (LISP), Compilers, Information and Communication (HTML/XML, Cryptographic algorithms, certificates),Software Development Methodologies, Operating Systems I/II (Unix, Solaris, Windows NT),Information Systems I/II (UML), Software Technology, Computer Networks (DNS (bind), TCP/IP, FTP, DHCP), Parallel Programming (MPICH), Graphics (OpenGL).
+}
+
+%----------------------------------------------------------------------------------------
+%	AWARDS SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Certificates}
+
+\cvitemwithcomment{Coursera Certificates}{Programming Mobile Applications for Android, Heterogeneous Parallel Programming}{2013--2014}
+\cvitemwithcomment{London School of Computer Education}{Oracle 11g Database Administrator - OCA, OCP}{2012}
+\cvitemwithcomment{Udacity}{Artificial Intelligence for Robotics, Web Development}{2011--2012}
+
+%----------------------------------------------------------------------------------------
+%	LANGUAGES SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Languages}
+
+\cvitem{Greek}{Mother tongue}
+\cvitem{English}{Professional}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
