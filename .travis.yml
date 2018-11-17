@@ -1,0 +1,20 @@
+sudo: required
+language: generic
+services: docker
+
+tex-config:
+- tex-scheme=small
+- push-type=none
+- build-pattern=cv.tex
+- packages=xkeyval, collection-latex, collection-langeuropean, exam, amsmath, amscls, mathtools, thmtools, stmaryrd, xcolor, pdfpages, pgf, cancel, hyperref, pgfplots, listings, scalerel, stackengine, etoolbox, listofitems, marvosym, amsfonts, opensans, slantsc, fancyhdr, ulem, algorithms, algorithmicx, float, booktabs, enumitem, polynom, fancyvrb, makecmds, multirow, chngcntr, fvextra, upquote, lineno, ifplatform, xstring, framed, caption, collection-fontsrecommended, minted, pgfgantt, geometry, beamer, translator, environ, trimspaces, imakeidx, graphics, tools, oberdiek, moderncv, fontawesome, l3packages, l3kernel, microtype
+
+script:
+- docker run --mount src=$TRAVIS_BUILD_DIR/,target=/repo,type=bind strauman/travis-latexbuild:small
+deploy:
+  provider: releases
+  api_key:
+    secure: MxWD9F3AdGYG1UAcWwlxBdpLzvFVLf42vlCaCnE79Bzoy8XWostVS+4Ykf2g0WikproXi74at2bSlvHkTnwyS3ETeu//RzWOmNDj65vY1NfgVr/N5UqiF82VW5QtkczzGJjmYmWhtcP41GMgkOoWNQ2WRRzUKy25ST+dv6iweX2KENNDeaxbcmzUSPhqXZX+wSQ1hPOXC5xh9R97HH0YJVUerB0sIWdoStodSsb9H6k2rcdSt9FkPyy5A21LgohsX8c4oGjQu8jCIB2oo5Riytfl/8siPvwmMUwKvCZM96wzgDqleheOAqWS3u9+bEB0LyGZVID50NN2KRG+I2W6/PBG/BqqToz0IJeH4cUltHW+nR1Z6PCrXBON9ISRFI0HmIvhi7jpKSAFQT0BT+eOnoM+KaezM8rxicY5KfUSKKuwfwI0N3ctClj7sjblfzOjS6cAiHVBeZH6v570muurlz3/dK2Kwe3r874vlhpNu/r5psGR326fOmuZQyn1grrAMX1ebCAEsoiGiMLj47Npc+7ExfT9luFScJ800pqX8yXpqs3MZYW5ihIP4hy/NiBelOxHrprxt+Xgf7tu3nueJxseHMmmfeLhhgn6yBidKKV0Ee7+IQP8rm4hsX8rIvCo/N+i96RjuE0xQFAzWY4v22RI4gN2Kugm1ea17zgPFbk=
+  file: cv.pdf
+  skip_cleanup: true
+  on:
+    repo: inglor/cv
