@@ -17,4 +17,5 @@ deploy:
   file: cv.pdf
   skip_cleanup: true
   on:
+    tags: true
     repo: inglor/cv
