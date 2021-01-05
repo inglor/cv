@@ -31,6 +31,6 @@ jobs:
         uses: vinay0410/tectonic-action@v1.1.2
         with:
           # Path of Tex File
-          tex_path: $GITHUB_WORKSPACE/cv.tex
+          tex_path: cv.tex
           # String stating whether to push output PDF, PDF will only be pushed in case of "yes"
           push: yes
