@@ -22,14 +22,11 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      
       - name: Extract Branch Name
         run: echo "BRANCH=$(echo ${GITHUB_REF##*/})" >> $GITHUB_ENV
-
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout code
-      - uses: actions/checkout@v2
-
+        uses: actions/checkout@v2
       - name: Compile LateX
         uses:  inglor/tectonic-action@91ee828b3dd1cc4473da404f639235c2642de2a3
         env:
@@ -37,7 +34,6 @@ jobs:
         with:
           # Path of Tex File
           tex_path: cv.tex
-
       - name: Create Release
         id: create_release
         if: contains(github.ref, "master")
@@ -49,7 +45,6 @@ jobs:
           release_name: Release ${{ github.ref }}
           draft: false
           prerelease: false
-
       - name: Upload Release Asset
         id: upload-release-asset
         if: contains(github.ref, "master")
