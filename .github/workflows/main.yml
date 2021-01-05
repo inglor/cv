@@ -33,4 +33,4 @@ jobs:
           # Path of Tex File
           tex_path: cv.tex
           # String stating whether to push output PDF, PDF will only be pushed in case of "yes"
-          push: no
+          push: yes
