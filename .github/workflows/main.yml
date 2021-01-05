@@ -22,17 +22,42 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      
+      - name: Extract Branch Name
+        run: echo "BRANCH=$(echo ${GITHUB_REF##*/})" >> $GITHUB_ENV
+
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout code
       - uses: actions/checkout@v2
 
       - name: Compile LateX
-        # You may pin to the exact commit or the version.
-        # uses: vinay0410/tectonic-action@b3138021657a3cdb3823f3980be054ca89e86d81
         uses:  inglor/tectonic-action@91ee828b3dd1cc4473da404f639235c2642de2a3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           # Path of Tex File
           tex_path: cv.tex
-          # String stating whether to push output PDF, PDF will only be pushed in case of "yes"
-          push: yes
+
+      - name: Create Release
+        id: create_release
+        if: contains(github.ref, "master")
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: false
+          prerelease: false
+
+      - name: Upload Release Asset
+        id: upload-release-asset
+        if: contains(github.ref, "master")
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
+          asset_path: ./cv.pdf
+          asset_name: cv.pdf
+          asset_content_type: application/pdf
