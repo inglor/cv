@@ -2,31 +2,35 @@ name: Release
 
 on:
   push:
-    tags:
-      - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
+    branches:
+      - master
 
 jobs:
   build:
-    if: github.event.base_ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Compile LateX
-        uses:  inglor/tectonic-action@91ee828b3dd1cc4473da404f639235c2642de2a3
+        uses: inglor/tectonic-action@91ee828b3dd1cc4473da404f639235c2642de2a3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          # Path of Tex File
           tex_path: cv.tex
+      - name: Bump version and push tag
+        id: bump_version
+        uses: anothrNick/github-tag-action@1.26.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          WITH_V: true
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
+          tag_name: ${{ steps.bump_version.outputs.new_tag }}
+          release_name: Release ${{ steps.bump_version.outputs.new_tag }}
           draft: false
           prerelease: false
       - name: Upload Release Asset
