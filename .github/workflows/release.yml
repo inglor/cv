@@ -12,11 +12,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Compile LateX
-        uses: inglor/tectonic-action@91ee828b3dd1cc4473da404f639235c2642de2a3
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: wtfjoke/setup-tectonic@v1
         with:
-          tex_path: cv.tex
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - run: tectonic cv.tex
       - name: Bump version and push tag
         id: bump_version
         uses: anothrNick/github-tag-action@1.26.0
