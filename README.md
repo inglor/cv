@@ -12,5 +12,5 @@ LaTex based CV using [ModernCV](https://github.com/xdanaux/moderncv). The compil
 `tectonic cv.tex`
 
 ## GitHub workflow
-* Automatically build the `pdf` on each commit on `master` or PR against master
-* Automatically create a new release when merged to `master` and upload the `pdf` artifact
+* Automatically build the `pdf` on each commit on `main` or PR against `main`
+* Automatically create a new release when merged to `main` and upload the `pdf` artifact

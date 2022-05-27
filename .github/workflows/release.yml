@@ -3,19 +3,26 @@ name: Release
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v2
-      - name: Compile LateX
-        uses: wtfjoke/setup-tectonic@v1
+      - uses: actions/cache@v2
+        name: Tectonic Cache
+        with:
+          path: ~/.cache/Tectonic
+          key: ${{ runner.os }}-tectonic-${{ hashFiles('**/*.tex') }}
+          restore-keys: |
+            ${{ runner.os }}-tectonic-
+      - uses: wtfjoke/setup-tectonic@v1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-      - run: tectonic cv.tex
+      - name: Run Tectonic
+        run: tectonic cv.tex
       - name: Bump version and push tag
         id: bump_version
         uses: anothrNick/github-tag-action@1.39.0
