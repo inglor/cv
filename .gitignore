@@ -5,3 +5,4 @@ cv.aux
 cv.fdb_latexmk
 cv.pdf
 _archive
+.DS_Store
